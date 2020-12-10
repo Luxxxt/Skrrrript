@@ -1,0 +1,55 @@
+coroutine.resume((coroutine.create(function()
+    local GUI = Instance.new("ScreenGui", game.CoreGui)
+    wait(0.9)
+    local Frame1 = Instance.new("Frame", GUI)
+    Frame1.Name = "MainFrame"
+    Frame1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    Frame1.BorderSizePixel = 0
+    Frame1.Position = UDim2.new(0.5, -175, 0, 50)
+    Frame1.Size = UDim2.new(0, 0, 0, 80)
+    local Label = Instance.new("TextLabel", Frame1)
+    Label.Name = "TextLabel"
+    Label.BackgroundTransparency = 1
+    Label.Position = UDim2.new(0, 0, 0.5, -15)
+    Label.Size = UDim2.new(1, 0, 0, 30)
+    Label.Font = Enum.Font.SourceSansLight
+    Label.Text = ""
+    Label.TextColor3 = Color3.fromRGB(236, 240, 241)
+    Label.TextScaled = true
+    local Frame2 = Instance.new("Frame", Frame1)
+    Frame2.Name = "Bar"
+    Frame2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    Frame2.BorderSizePixel = 0
+    Frame2.Position = UDim2.new(0, 0, 1, 0)
+    Frame2.Size = UDim2.new(1, 0, 0, 0)
+    Frame2.BackgroundColor3 = Color3.fromRGB(0,216,111)
+    Frame1:TweenSize(UDim2.new(0, 350, 0, 80), "Out", "Sine", 0.5)
+    wait(1)
+    Frame2:TweenSizeAndPosition(UDim2.new(1, 0, 0, 5), UDim2.new(0, 0, 1, -5), "Out", "Sine", 0.1)
+    local text = "  Made by Luxt   "
+    for i = 1, string.len(text) do
+        Label.Text = string.sub(text, 1, i)
+        wait()
+    end
+    wait(2)
+    for i = 1, string.len(text) do
+        Label.Text = Label.Text:sub(1, -2)
+        wait()
+    end
+    local text = "  https://discord.gg/qHWZTvcgX2  "
+    for i = 1, string.len(text) do
+        Label.Text = string.sub(text, 1, i)
+        wait()
+    end
+    wait(2.5)
+    for i = 1, string.len(text) do
+        Label.Text = Label.Text:sub(1, -2)
+        wait()
+    end
+    for i=0,1,0.09 do
+    Frame1.Transparency = i
+    Frame2.Transparency = i
+    wait()
+    end
+    GUI:Destroy()
+end)))
